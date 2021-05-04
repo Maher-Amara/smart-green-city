@@ -1,23 +1,17 @@
 package com.maherdev;
 
-import javax.swing.*;
-
 // the client class will handle all communication with the server
-//
+
 public class Client {
     private final  String application_private_key = "IkIsb6QHAgh0frHl"; // for security reasons encripted communication
     private int Id;
 
     // just for testing purpses
-    private final String correctEmail = "user1@live.com";
+    private final String correctEmail = "user@live.com";
     private final String correctPassword = "password";
 
     public Client(){
-        // constructeur de la classe from scratch
-    }
-    public Client(String email, String password){
-        // constructeur de la classe if you already have session data
-
+        // constructeur de la classe
     }
 
     public int logIN(String email, String password){
@@ -31,17 +25,22 @@ public class Client {
                         int age,
                         boolean sex,
                         String email,
+                        String password,
                         int tel,
                         String Adresse,
                         int educationalLevel, // 1- ecole 2- college 3- licée 4- universitaire
                         int activityArea,  // 1- Ingenieur 2- Senté 3- Artisin 4- commersent 5- ... 6- autres
                         Bitmap avatar
                         ){
-        boolean serverError = false;
-        if (firstName.equals("")){return 1;} // name required
-        else if (lastName.equals("")){return 2;} // name required
-        else if (email.equals("")){return 3;} // Email required
-        if (email.equals(this.correctEmail)){return 4;} // Email alredy exists try logging in
-        else{return 5;}
+
+        if (email.equals(this.correctEmail)){
+            return 1; // email deja existant
+        }else {
+            return 2; // reqister valide
+        }
+    }
+
+    public int[] publicationsIds(){
+        return new int[]{1,2,3,4,5,6,7,8,9,10};
     }
 }

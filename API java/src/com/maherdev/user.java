@@ -1,6 +1,6 @@
 package com.maherdev;
 
-public class user {
+public class User {
     private String firstName = "user2FirstName";
     private String lastName  = "user2LastName";
     private int age = 25;
@@ -11,5 +11,12 @@ public class user {
     private int educationalLevel = 4;
     private int activityArea = 1;
     private Bitmap avatar;
+
+    public User(){
+
+    }
+    public void update(){
+
+    }
 
 }
