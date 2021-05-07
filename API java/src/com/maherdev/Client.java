@@ -40,7 +40,15 @@ public class Client {
         }
     }
 
-    public int[] publicationsIds(){
-        return new int[]{1,2,3,4,5,6,7,8,9,10};
+    public Post[] publicationsIds(){
+        return new Post[]{
+                new Post(),
+                new Post(),
+                new Post(),
+                new Post(),
+                new Post(),
+                new Post(),
+        };
     }
+
 }
