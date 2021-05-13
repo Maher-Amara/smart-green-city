@@ -45,24 +45,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord</a></li>
+                    <li class="<?= $id == 0 ? 'active' :'' ?>"><a href="<?= base_url() ?>"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord</a></li>
+
+                    <h3 class="menu-title">Municipalité</h3>
+                    <li class="<?= $id == 1 ? 'active' :'' ?>"><a href="<?= base_url("municipality") ?>"> <i class="menu-icon fa fa-hospital-o"></i>Municipalité</a></li>
+                    <li class="<?= $id == 2 ? 'active' :'' ?>"><a href="<?= base_url("municipality/council") ?>"> <i class="menu-icon fa fa-sitemap"></i>Conseil munisipal</a></li>
+                    <li class="<?= $id == 3 ? 'active' :'' ?>"><a href="<?= base_url("municipality/committee") ?>"> <i class="menu-icon fa fa-users"></i>Comités</a></li>
 
                     <h3 class="menu-title">News</h3>
-                    <li><a href="#"> <i class="menu-icon ti-layout-list-thumb"></i>News</a></li>
-                    <li><a href="#"> <i class="menu-icon fa fa-bullhorn"></i>Annances</a></li>
+                    <li class="<?= $id == 4 ? 'active' :'' ?>"><a href="<?= base_url("news") ?>"> <i class="menu-icon ti-layout-list-thumb"></i>News</a></li>
+                    <li class="<?= $id == 5 ? 'active' :'' ?>"><a href="<?= base_url("news/announcement") ?>"> <i class="menu-icon fa fa-bullhorn"></i>Annances</a></li>
 
                     <h3 class="menu-title">Portail citoyens</h3>
-                    <li><a href="#"> <i class="menu-icon fa fa-warning"></i>Réclamations <span class="badge badge-danger">5</span></a></li>
-                    <li><a href="#"> <i class="menu-icon fa fa-question-circle"></i>Demande information <span class="badge badge-warning">10</span></a></li>
-                    <li><a href="#"> <i class="menu-icon fa fa-lightbulb-o"></i>Boîte à idées <span class="badge badge-success">5</span></a></li>
+                    <li class="<?= $id == 6 ? 'active' :'' ?>"><a href="<?= base_url("citizens") ?>"> <i class="menu-icon fa fa-user"></i>Citoyens</a></li>
+                    <li class="<?= $id == 7 ? 'active' :'' ?>"><a href="<?= base_url("citizens/complaints") ?>"> <i class="menu-icon fa fa-warning"></i>Réclamations <span class="badge badge-danger"><?= $claimCount ?></span></a></li>
+                    <li class="<?= $id == 8 ? 'active' :'' ?>"><a href="<?= base_url("citizens/information") ?>"> <i class="menu-icon fa fa-question-circle"></i>Demande information <span class="badge badge-warning"><?= $informationCount ?></span></a></li>
+                    <li class="<?= $id == 9 ? 'active' :'' ?>"><a href="<?= base_url("citizens/ideas") ?>"> <i class="menu-icon fa fa-lightbulb-o"></i>Boîte à idées <span class="badge badge-success"><?= $ideasCount ?></span></a></li>
 
-                    <h3 class="menu-title">Green corner</h3>
-                    <li><a href="#"> <i class="menu-icon fa fa-trash-o"></i>Collecte déchets</a></li>
+                    <h3 class="menu-title">Environnement & Hygiene</h3>
+                    <li class="<?= $id == 10 ? 'active' :'' ?>"><a href="<?= base_url("environnement") ?>"> <i class="menu-icon fa fa-trash-o"></i>Collecte déchets</a></li>
 
-                    <h3 class="menu-title">Paramètres avancées</h3>
-                    <li><a href="#"> <i class="menu-icon fa fa-truck"></i>Equipement</a></li>
-                    <li><a href="#"> <i class="menu-icon fa fa-user"></i>Admins</a></li>
-                    <li><a href="#"> <i class="menu-icon ti-settings"></i>Parametres</li>
+                    <h3 class="menu-title">Avancé</h3>
+                    <li class="<?= $id == 11 ? 'active' :'' ?>"><a href="<?= base_url("advanced/equipment") ?>"> <i class="menu-icon fa fa-truck"></i>Equipement</a></li>
+                    <li class="<?= $id == 12 ? 'active' :'' ?>"><a href="<?= base_url("advanced/security") ?>"> <i class="menu-icon fa fa-lock"></i>Sécurité</a></li>
+                    <li class="<?= $id == 13 ? 'active' :'' ?>"><a href="<?= base_url("advanced/settings") ?>"> <i class="menu-icon ti-settings"></i>Parametres</li>
                 </ul>
             </div>
         </nav>
@@ -90,10 +96,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="count bg-danger">5</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">You have 5 Notification</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
                                     <i class="fa fa-check"></i>
                                     <p>Server #1 overloaded.</p>
+                                </a>
+                                <a class="dropdown-item media bg-flat-color-2" href="#">
+                                    <i class="fa fa-info"></i>
+                                    <p>Server #2 overloaded.</p>
+                                </a>
+                                <a class="dropdown-item media bg-flat-color-3" href="#">
+                                    <i class="fa fa-info"></i>
+                                    <p>Server #2 overloaded.</p>
                                 </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
                                     <i class="fa fa-info"></i>
@@ -109,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="dropdown for-message">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="ti-email"></i>
-                                <span class="count bg-primary">9</span>
+                                <span class="count bg-primary">4</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
@@ -153,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="<?= base_url('assets/images/admin.jpg') ?>" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="<?= $profilePic ?>" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -190,7 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1><?= $pageTitle ?></h1>
                     </div>
                 </div>
             </div>
@@ -198,7 +212,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
+                        <?php foreach($path as $page){ ?>
+                            <li> <a href="<?= $page["url"] ?>"><?= $page["title"] ?></a></li>
+                        <?php } ?>
+                        <li class="active"><?= $pageTitle ?></li>
                         </ol>
                     </div>
                 </div>
